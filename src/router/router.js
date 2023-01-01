@@ -1,4 +1,4 @@
-import { EventEmitter, Events } from "./event-emitter.js";
+import { EventEmitter } from "./event-emitter.js";
 
 const ROUTER_TYPES = {
         hash: "hash",
@@ -11,9 +11,9 @@ const ROUTER_TYPES = {
 /**
  * SPA Router - replacement for Framework Routers (history and hash).
  */
-class Router {
+class Router extends EventEmitter {
     constructor(options = {}) {
-        this.events = new EventEmitter(this);
+        super(options);
         this.options = { type: ROUTER_TYPES.hash, ...options };
     }
 
@@ -40,6 +40,7 @@ class Router {
 
             defer(() => this._tryNav(href));
         }
+        // debugger;
         return this;
     }
 
@@ -52,7 +53,7 @@ class Router {
     }
 
     _triggerRouteChange(path, url) {
-        this.events.trigger("route", {
+        this.emit("route", {
             route: this.options.routes[path],
             path: path,
             url: url,

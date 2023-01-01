@@ -17,7 +17,7 @@ const options = {
 };
 
 const router = new Router(options).listen().on("route", (e) => {
-    const { route } = e.detail;
+    const { route } = e;
 
     switch (route) {
         case "home":
@@ -78,5 +78,3 @@ const router = new Router(options).listen().on("route", (e) => {
 // });
 
 window.router = router;
-
-
