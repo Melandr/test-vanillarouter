@@ -37,44 +37,4 @@ const router = new Router(options).listen().on("route", (e) => {
     }
 });
 
-// router
-//     .get("/about", (req, router) => {
-//         section.innerHTML = About();
-//         console.log(`Welcome to about page! The request url is ${req.uri}`);
-//     })
-//     .setName("about");
-
-// router
-//     .get("/products", (req, router) => {
-//         section.innerHTML = Products();
-//         console.log(router);
-//     })
-//     .setName("products");
-
-// router.notFoundHandler(function (req, router) {
-//     console.log("oops! the page you are looking for is probably eaten by a snake");
-//     router.pathFor("home");
-// });
-
-// router.init();
-
-// function homeCallback(req, router) {
-//     section.innerHTML = Home();
-//     console.log(`Welcome to my home page! The request url is ${req.uri}`);
-
-//     window.query = req.query;
-// }
-
-// document.addEventListener("click", (event) => {
-//     const { target } = event;
-
-//     if (target instanceof HTMLAnchorElement) {
-//         event.preventDefault();
-
-//         router._goTo(target.href);
-//         console.log(router);
-//         console.log(window.Request.pathname);
-//     }
-// });
-
-window.router = router;
+// window.router = router;
